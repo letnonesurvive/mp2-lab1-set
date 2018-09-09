@@ -142,3 +142,4 @@ __Цель данной работы__  — разработка структу�
 [slides]:      https://github.com/UNN-VMK-Software/mp2-lab1-set/tree/master/docs/slides
 [upstream]:    https://github.com/UNN-VMK-Software/mp2-lab1-set
 [gitter]:      https://gitter.im/UNN-VMK-Software/mp2-lab1-set
+Я добавил новые изменения в файл README для проверки в новой ветке <new-test-branch>  
