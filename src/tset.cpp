@@ -21,68 +21,68 @@ TSet::TSet(const TBitField &bf) : BitField(-1)
 {
 }
 
-TSet::operator TBitField()
-{
-}
-
-int TSet::GetMaxPower(void) const // получить макс. к-во эл-тов
-{
-}
-
-int TSet::IsMember(const int Elem) const // элемент множества?
-{
-    return 0;
-}
-
-void TSet::InsElem(const int Elem) // включение элемента множества
-{
-}
-
-void TSet::DelElem(const int Elem) // исключение элемента множества
-{
-}
-
-// теоретико-множественные операции
-
-TSet& TSet::operator=(const TSet &s) // присваивание
-{
-}
-
-int TSet::operator==(const TSet &s) const // сравнение
-{
-    return 0;
-}
-
-int TSet::operator!=(const TSet &s) const // сравнение
-{
-}
-
-TSet TSet::operator+(const TSet &s) // объединение
-{
-}
-
-TSet TSet::operator+(const int Elem) // объединение с элементом
-{
-}
-
-TSet TSet::operator-(const int Elem) // разность с элементом
-{
-}
-
-TSet TSet::operator*(const TSet &s) // пересечение
-{
-}
-
-TSet TSet::operator~(void) // дополнение
-{
-}
-
-// перегрузка ввода/вывода
-
-istream &operator>>(istream &istr, TSet &s) // ввод
-{
-}
-
-ostream& operator<<(ostream &ostr, const TSet &s) // вывод
-{
-}
+//TSet::operator TBitField()
+//{
+//}
+//
+//int TSet::GetMaxPower(void) const // получить макс. к-во эл-тов
+//{
+//}
+//
+//int TSet::IsMember(const int Elem) const // элемент множества?
+//{
+//    return 0;
+//}
+//
+//void TSet::InsElem(const int Elem) // включение элемента множества
+//{
+//}
+//
+//void TSet::DelElem(const int Elem) // исключение элемента множества
+//{
+//}
+//
+//// теоретико-множественные операции
+//
+//TSet& TSet::operator=(const TSet &s) // присваивание
+//{
+//}
+//
+//int TSet::operator==(const TSet &s) const // сравнение
+//{
+//    return 0;
+//}
+//
+//int TSet::operator!=(const TSet &s) const // сравнение
+//{
+//}
+//
+//TSet TSet::operator+(const TSet &s) // объединение
+//{
+//}
+//
+//TSet TSet::operator+(const int Elem) // объединение с элементом
+//{
+//}
+//
+//TSet TSet::operator-(const int Elem) // разность с элементом
+//{
+//}
+//
+//TSet TSet::operator*(const TSet &s) // пересечение
+//{
+//}
+//
+//TSet TSet::operator~(void) // дополнение
+//{
+//}
+//
+//// перегрузка ввода/вывода
+//
+//istream &operator>>(istream &istr, TSet &s) // ввод
+//{
+//}
+//
+//ostream& operator<<(ostream &ostr, const TSet &s) // вывод
+//{
+//}

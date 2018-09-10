@@ -30,10 +30,10 @@ public:
   ~TBitField();                      //                                    (#С)
 
   // доступ к битам
+  int  GetBit(const int n) const; // получить значение бита               (#Л1)
   int GetLength(void) const;      // получить длину (к-во битов)           (#О)
   void SetBit(const int n);       // установить бит                       (#О4)
   void ClrBit(const int n);       // очистить бит                         (#П2)
-  int  GetBit(const int n) const; // получить значение бита               (#Л1)
 
   // битовые операции
   int operator==(const TBitField &bf) const; // сравнение                 (#О5)
