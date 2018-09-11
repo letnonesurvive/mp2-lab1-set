@@ -55,88 +55,88 @@ TEST(TBitField, throws_when_create_bitfield_with_negative_length)
   ASSERT_ANY_THROW(TBitField bf(-3));
 }
 //
-//TEST(TBitField, throws_when_set_bit_with_negative_index)
-//{
-//  TBitField bf(10);
+TEST(TBitField, throws_when_set_bit_with_negative_index)
+{
+  TBitField bf(10);
+
+  ASSERT_ANY_THROW(bf.SetBit(-3));
+}
 //
-//  ASSERT_ANY_THROW(bf.SetBit(-3));
-//}
+TEST(TBitField, throws_when_set_bit_with_too_large_index)
+{
+  TBitField bf(10);
+
+  ASSERT_ANY_THROW(bf.SetBit(11));
+}
 //
-//TEST(TBitField, throws_when_set_bit_with_too_large_index)
-//{
-//  TBitField bf(10);
+TEST(TBitField, throws_when_get_bit_with_negative_index)
+{
+  TBitField bf(10);
+
+  ASSERT_ANY_THROW(bf.GetBit(-3));
+}
 //
-//  ASSERT_ANY_THROW(bf.SetBit(11));
-//}
+TEST(TBitField, throws_when_get_bit_with_too_large_index)
+{
+  TBitField bf(10);
+
+  ASSERT_ANY_THROW(bf.GetBit(11));
+}
 //
-//TEST(TBitField, throws_when_get_bit_with_negative_index)
-//{
-//  TBitField bf(10);
+TEST(TBitField, throws_when_clear_bit_with_negative_index)
+{
+  TBitField bf(10);
+
+  ASSERT_ANY_THROW(bf.ClrBit(-3));
+}
 //
-//  ASSERT_ANY_THROW(bf.GetBit(-3));
-//}
+TEST(TBitField, throws_when_clear_bit_with_too_large_index)
+{
+  TBitField bf(10);
+
+  ASSERT_ANY_THROW(bf.ClrBit(11));
+}
+
+TEST(TBitField, can_assign_bitfields_of_equal_size)
+{
+  const int size = 2;
+  TBitField bf1(size), bf2(size);
+  for (int i = 0; i < size; i++)
+  {
+    bf1.SetBit(i);
+  }
+  bf2 = bf1;
+
+  EXPECT_NE(0, bf2.GetBit(0));
+  EXPECT_NE(0, bf2.GetBit(1));
+}
+
+TEST(TBitField, assign_operator_changes_bitfield_size)
+{
+  const int size1 = 2, size2 = 5;
+  TBitField bf1(size1), bf2(size2);
+  for (int i = 0; i < size1; i++)
+  {
+    bf1.SetBit(i);
+  }
+  bf2 = bf1;
+
+  EXPECT_EQ(2, bf2.GetLength());
+}
 //
-//TEST(TBitField, throws_when_get_bit_with_too_large_index)
-//{
-//  TBitField bf(10);
-//
-//  ASSERT_ANY_THROW(bf.GetBit(11));
-//}
-//
-//TEST(TBitField, throws_when_clear_bit_with_negative_index)
-//{
-//  TBitField bf(10);
-//
-//  ASSERT_ANY_THROW(bf.ClrBit(-3));
-//}
-//
-//TEST(TBitField, throws_when_clear_bit_with_too_large_index)
-//{
-//  TBitField bf(10);
-//
-//  ASSERT_ANY_THROW(bf.ClrBit(11));
-//}
-//
-//TEST(TBitField, can_assign_bitfields_of_equal_size)
-//{
-//  const int size = 2;
-//  TBitField bf1(size), bf2(size);
-//  for (int i = 0; i < size; i++)
-//  {
-//    bf1.SetBit(i);
-//  }
-//  bf2 = bf1;
-//
-//  EXPECT_NE(0, bf2.GetBit(0));
-//  EXPECT_NE(0, bf2.GetBit(1));
-//}
-//
-//TEST(TBitField, assign_operator_changes_bitfield_size)
-//{
-//  const int size1 = 2, size2 = 5;
-//  TBitField bf1(size1), bf2(size2);
-//  for (int i = 0; i < size1; i++)
-//  {
-//    bf1.SetBit(i);
-//  }
-//  bf2 = bf1;
-//
-//  EXPECT_EQ(2, bf2.GetLength());
-//}
-//
-//TEST(TBitField, can_assign_bitfields_of_non_equal_size)
-//{
-//  const int size1 = 2, size2 = 5;
-//  TBitField bf1(size1), bf2(size2);
-//  for (int i = 0; i < size1; i++)
-//  {
-//    bf1.SetBit(i);
-//  }
-//  bf2 = bf1;
-//
-//  EXPECT_NE(0, bf2.GetBit(0));
-//  EXPECT_NE(0, bf2.GetBit(1));
-//}
+TEST(TBitField, can_assign_bitfields_of_non_equal_size)
+{
+  const int size1 = 2, size2 = 5;
+  TBitField bf1(size1), bf2(size2);
+  for (int i = 0; i < size1; i++)
+  {
+    bf1.SetBit(i);
+  }
+  bf2 = bf1;
+
+  EXPECT_NE(0, bf2.GetBit(0));
+  EXPECT_NE(0, bf2.GetBit(1));
+}
 //
 //TEST(TBitField, compare_equal_bitfields_of_equal_size)
 //{
@@ -147,10 +147,9 @@ TEST(TBitField, throws_when_create_bitfield_with_negative_length)
 //    bf1.SetBit(i);
 //  }
 //  bf2 = bf1;
-//
 //  EXPECT_EQ(bf1, bf2);
 //}
-//
+
 //TEST(TBitField, or_operator_applied_to_bitfields_of_equal_size)
 //{
 //  const int size = 4;
