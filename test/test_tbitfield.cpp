@@ -145,7 +145,7 @@ TEST(TBitField, compare_equal_bitfields_of_equal_size)
     bf1.SetBit(i);
   }
   bf2 = bf1;
-  EXPECT_TRUE(bf1==bf2);
+  EXPECT_EQ(bf1,bf2);
 }
 
 TEST(TBitField, or_operator_applied_to_bitfields_of_equal_size)
@@ -164,7 +164,7 @@ TEST(TBitField, or_operator_applied_to_bitfields_of_equal_size)
   expBf.SetBit(2);
   expBf.SetBit(3);
   bf3 = bf1 | bf2;
-  EXPECT_TRUE(expBf==(bf1|bf2));
+  EXPECT_EQ(expBf,(bf1|bf2));
 }
 
 TEST(TBitField, or_operator_applied_to_bitfields_of_non_equal_size)
@@ -183,7 +183,7 @@ TEST(TBitField, or_operator_applied_to_bitfields_of_non_equal_size)
   expBf.SetBit(2);
   expBf.SetBit(3);
   bf3 = bf1 | bf2;
-  EXPECT_TRUE(expBf==(bf3));
+  EXPECT_EQ(expBf,(bf3));
 }
 //
 TEST(TBitField, and_operator_applied_to_bitfields_of_equal_size)
@@ -200,7 +200,7 @@ TEST(TBitField, and_operator_applied_to_bitfields_of_equal_size)
   // expBf = 0001
   expBf.SetBit(3);
 
-  EXPECT_TRUE(expBf== (bf1 & bf2));
+  EXPECT_EQ(expBf,(bf1 & bf2));
 }
 //
 TEST(TBitField, and_operator_applied_to_bitfields_of_non_equal_size)
@@ -217,7 +217,7 @@ TEST(TBitField, and_operator_applied_to_bitfields_of_non_equal_size)
   // expBf = 00010
   expBf.SetBit(3);
 
-  EXPECT_TRUE(expBf== (bf1 & bf2));
+  EXPECT_EQ(expBf, (bf1 & bf2));
 }
 //
 //TEST(TBitField, can_invert_bitfield)
@@ -304,5 +304,5 @@ TEST(TBitField, bitfields_with_different_bits_are_not_equal)
   bf2.SetBit(1);
   bf2.SetBit(2);
 
-  EXPECT_FALSE(bf1== bf2);
+  EXPECT_NE(bf1,bf2);
 }

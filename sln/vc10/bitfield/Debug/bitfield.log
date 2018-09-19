@@ -1,0 +1,5 @@
+﻿  tbitfield.cpp
+c:\users\sizov.i\desktop\проекты расмана и sizeofa\new\mp2-lab1-set\src\tbitfield.cpp(193): warning C4244: инициализация: преобразование "double" в "TELEM", возможна потеря данных
+c:\users\sizov.i\desktop\проекты расмана и sizeofa\new\mp2-lab1-set\src\tbitfield.cpp(114): warning C4715: TBitField::GetBit: значение возвращается не при всех путях выполнения
+c:\users\sizov.i\desktop\проекты расмана и sizeofa\new\mp2-lab1-set\src\tbitfield.cpp(138): warning C4715: TBitField::operator=: значение возвращается не при всех путях выполнения
+  bitfield.vcxproj -> C:\Users\sizov.i\Desktop\Проекты Расмана и Sizeofa\new\mp2-lab1-set\sln\vc10\Debug\bitfield.lib
