@@ -219,80 +219,80 @@ TEST(TBitField, and_operator_applied_to_bitfields_of_non_equal_size)
 
   EXPECT_EQ(expBf, (bf1 & bf2));
 }
-//
-//TEST(TBitField, can_invert_bitfield)
-//{
-//  const int size =2;
-//  TBitField bf(size), negBf(size), expNegBf(size);
-//  // bf = 10
-//  bf.SetBit(1);
-//  negBf = ~bf;
-//
-//  // expNegBf = 01
-//  expNegBf.SetBit(0);
-//
-//  EXPECT_TRUE(expNegBf == negBf);
-//}
-//
-//TEST(TBitField, can_invert_large_bitfield)
-//{
-//  const int size = 38;
-//  TBitField bf(size), negBf(size), expNegBf(size);
-//  bf.SetBit(35);
-//  negBf = ~bf;
-//
-//  for(int i = 0; i < size; i++)
-//    expNegBf.SetBit(i);
-//  expNegBf.ClrBit(35);
-//
-//  EXPECT_EQ(expNegBf, negBf);
-//}
-//
-//TEST(TBitField, invert_plus_and_operator_on_different_size_bitfield)
-//{
-//  const int firstSze = 4, secondSize = 8;
-//  TBitField firstBf(firstSze), negFirstBf(firstSze), secondBf(secondSize), testBf(secondSize);
-//  // firstBf = 0001
-//  firstBf.SetBit(0);
-//  negFirstBf = ~firstBf;
-//  // negFirstBf = 1110
-//
-//  // secondBf = 00011000
-//  secondBf.SetBit(3);
-//  secondBf.SetBit(4);
-//
-//  // testBf = 00001000
-//  testBf.SetBit(3);
-//
-//  EXPECT_EQ(secondBf & negFirstBf, testBf);
-//}
-//
-//TEST(TBitField, can_invert_many_random_bits_bitfield)
-//{
-//  const int size = 38;
-//  TBitField bf(size), negBf(size), expNegBf(size);
-//
-//  std::vector<int> bits;
-//  bits.push_back(0);
-//  bits.push_back(1);
-//  bits.push_back(14);
-//  bits.push_back(16);
-//  bits.push_back(33);
-//  bits.push_back(37);
-//
-//  for (unsigned int i = 0; i < bits.size(); i++)
-//    bf.SetBit(bits[i]);
-//
-//  negBf = ~bf;
-//
-//  for(int i = 0; i < size; i++)
-//    expNegBf.SetBit(i);
-//  for (unsigned int i = 0; i < bits.size(); i++)
-//    expNegBf.ClrBit(bits[i]);
-//
-//  EXPECT_EQ(expNegBf, negBf);
-//}
-//
+
+TEST(TBitField, can_invert_bitfield)
+{
+  const int size =2;
+  TBitField bf(size), negBf(size), expNegBf(size);
+  // bf = 10
+  bf.SetBit(1);
+  negBf = ~bf;
+
+  // expNegBf = 01
+  expNegBf.SetBit(0);
+
+  EXPECT_TRUE(expNegBf == negBf);
+}
+
+TEST(TBitField, can_invert_large_bitfield)
+{
+  const int size = 38;
+  TBitField bf(size), negBf(size), expNegBf(size);
+  bf.SetBit(35);
+  negBf = ~bf;
+
+  for(int i = 0; i < size; i++)
+    expNegBf.SetBit(i);
+  expNegBf.ClrBit(35);
+
+  EXPECT_EQ(expNegBf, negBf);
+}
+
+TEST(TBitField, invert_plus_and_operator_on_different_size_bitfield)
+{
+  const int firstSze = 4, secondSize = 8;
+  TBitField firstBf(firstSze), negFirstBf(firstSze), secondBf(secondSize), testBf(secondSize);
+  // firstBf = 0001
+  firstBf.SetBit(0);
+  negFirstBf = ~firstBf;
+  // negFirstBf = 1110
+
+  // secondBf = 00011000
+  secondBf.SetBit(3);
+  secondBf.SetBit(4);
+
+  // testBf = 00001000
+  testBf.SetBit(3);
+
+  EXPECT_EQ(secondBf & negFirstBf, testBf);
+}
+
+TEST(TBitField, can_invert_many_random_bits_bitfield)
+{
+  const int size = 38;
+  TBitField bf(size), negBf(size), expNegBf(size);
+
+  std::vector<int> bits;
+  bits.push_back(0);
+  bits.push_back(1);
+  bits.push_back(14);
+  bits.push_back(16);
+  bits.push_back(33);
+  bits.push_back(37);
+
+  for (unsigned int i = 0; i < bits.size(); i++)
+    bf.SetBit(bits[i]);
+
+  negBf = ~bf;
+
+  for(int i = 0; i < size; i++)
+    expNegBf.SetBit(i);
+  for (unsigned int i = 0; i < bits.size(); i++)
+    expNegBf.ClrBit(bits[i]);
+
+  EXPECT_EQ(expNegBf, negBf);
+}
+
 TEST(TBitField, bitfields_with_different_bits_are_not_equal)
 {
   const int size = 4;

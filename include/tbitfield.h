@@ -20,8 +20,6 @@ private:
   int  BitLen; // длина битового поля - макс. к-во битов
   TELEM *pMem; // память для представления битового поля
   int  MemLen; // к-во эл-тов Мем для представления бит.поля
-  int max(int left, int right);
-  int min(int left, int right);
   // методы реализации
   int   GetMemIndex(const int n) const; // индекс в pМем для бита n       (#О2)
   TELEM GetMemMask (const int n) const; // битовая маска для бита n       (#О3)
@@ -38,7 +36,7 @@ public:
 
   // битовые операции
   bool operator==(const TBitField &bf) const; // сравнение                 (#О5)
-  int operator!=(const TBitField &bf) const; // сравнение
+  bool operator!=(const TBitField &bf) const; // сравнение
   TBitField& operator=(const TBitField &bf); // присваивание              (#П3)
   TBitField  operator|(const TBitField &bf); // операция "или"            (#О6)
   TBitField  operator&(const TBitField &bf); // операция "и"              (#Л2)
