@@ -1,0 +1,4 @@
+﻿  tbitfield.cpp
+c:\users\auxla\desktop\lab\src\tbitfield.cpp(16): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\auxla\desktop\lab\src\tbitfield.cpp(30): warning C4018: <: несоответствие типов со знаком и без знака
+  bitfield.vcxproj -> C:\Users\auxla\Desktop\Lab\sln\vc10\Debug\bitfield.lib
